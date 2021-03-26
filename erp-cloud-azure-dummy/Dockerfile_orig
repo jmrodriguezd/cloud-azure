@@ -1,0 +1,20 @@
+FROM ubuntu:20.04
+RUN apt-get update -y
+RUN apt-get install nano -y
+
+ENV TZ=Europe/Madrid
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN apt-get install build-essential libssl-dev libffi-dev python3-dev python3-pip libsasl2-dev libldap2-dev -y
+RUN apt-get install libpq-dev -y
+
+RUN pip install sqlalchemy
+RUN pip install psycopg2
+RUN pip install requests
+
+WORKDIR /PERP
+
+COPY . /PERP
+
+RUN ls -ltrh
+
+CMD python3 dummy.py
