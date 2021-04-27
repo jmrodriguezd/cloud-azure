@@ -11,8 +11,8 @@ import datetime
 
 # Postgres DB Connection
 db_name = 'erp_dev'
-db_user = 'psqladmin@erp-dev-db-server'
-db_pass = 'Hhw5u3N9kQJ7'
+db_user = 'user'
+db_pass = 'pass'
 db_host = 'erp-dev-db-server.postgres.database.azure.com' #'172.17.0.2' 
 db_port = '5432'
 
